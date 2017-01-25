@@ -1,11 +1,6 @@
-import "angular2-meteor-polyfills";
+import 'angular2-meteor-polyfills';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {AppModule} from './imports/app/app.module';
 
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { enableProdMode } from "@angular/core";
-import { AppModule } from "./imports/app";
-
-enableProdMode();
-
-Meteor.startup(() => {
-   platformBrowserDynamic().bootstrapModule(AppModule);
-});
+const platform = platformBrowserDynamic();
+platform.bootstrapModule(AppModule);
